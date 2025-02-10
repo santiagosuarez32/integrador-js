@@ -16,28 +16,28 @@
             Ingresa tu información personal para ponerte en contacto con 
             <span class="text-red-500">Unique Gamers</span> 
           </p>
-          <form name="wf-form-name" method="get" class="mx-auto mb-4 text-left sm:px-4 md:px-20">
+          <form name="wf-form-name" method="get" class="mx-auto mb-4 text-left sm:px-4 md:px-20" id="register-form">
             <div class="mb-4 grid w-full grid-cols-2 gap-6">
               <div>
                 <label htmlFor="name-2" class="mb-1 font-medium text-white">Nombre:</label>
-                <input type="text" class="block h-9 w-full rounded-md border border-solid border-red-700 px-3 py-6 text-sm text-white" placeholder="Ingresa tu nombre" required />
+                <input id="input-name"  type="text" class="block h-9 w-full rounded-md border border-solid border-red-700 px-3 py-6 text-sm text-white " placeholder="Ingresa tu nombre" required />
               </div>
               <div>
                 <label htmlFor="name-3" class="mb-1 font-medium text-white">Apellido:</label>
-                <input type="text" class="block h-9 w-full rounded-md border border-solid border-red-700 px-3 py-6 text-sm text-white" placeholder="Ingresa tu apellido" required />
+                <input id="input-lastname" type="text" class="block h-9 w-full rounded-md border border-solid border-red-700 px-3 py-6 text-sm text-white " placeholder="Ingresa tu apellido" required />
               </div>
             </div>
             <div class="mb-4">
               <label htmlFor="field" class="mb-1 font-medium text-white">Número de telefono</label>
-              <input type="text" class="mb-4 block h-9 w-full rounded-md border border-solid border-red-700 px-3 py-6 text-sm text-white" placeholder="Ingresa tu número de telefono" />
+              <input id="input-phone" type="text" class="mb-4 block h-9 w-full rounded-md border border-solid border-red-700 px-3 py-6 text-sm text-white" placeholder="Ingresa tu número de telefono" />
             </div>
             <div class="mb-4">
               <label htmlFor="field" class="mb-1 font-medium text-white">Email</label>
-              <input type="email" class="mb-4 block h-9 w-full rounded-md border border-solid border-red-700 px-3 py-6 text-sm text-white" placeholder="Ingresa tu email" />
+              <input id="input-email" type="email" class="mb-4 block h-9 w-full rounded-md border border-solid border-red-700 px-3 py-6 text-sm text-white" placeholder="Ingresa tu email" />
             </div>
             <div class="mb-5 md:mb-6 lg:mb-8">
               <label htmlFor="field" class="mb-1 font-medium text-white">Mensaje</label>
-              <textarea placeholder="" maxLength="5000" name="field" class="mb-2.5 block h-auto min-h-44 w-full rounded-md border border-solid border-red-700 px-3 py-2 text-sm text-white"></textarea>
+              <textarea id="input-msg" placeholder="" maxLength="5000" name="field" class="mb-2.5 block h-auto min-h-44 w-full rounded-md border border-solid border-red-700 px-3 py-2 text-sm text-white"></textarea>
             </div>
             <label class="flex items-center cursor-pointer mb-1 justify-center pb-4 md:pl-5">
             </label>
@@ -45,7 +45,6 @@
           </form>
         </div>
       </section>
-      
-      
+<script src="main.js"></script>
 </body>
 </html>
