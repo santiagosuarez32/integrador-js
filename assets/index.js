@@ -5,6 +5,8 @@ const categoriesList = document.querySelectorAll(".category");
 const cartBtn = document.querySelector(".cart-button");
 const productsCart = document.querySelector(".cart-container");
 const closeBtn = document.querySelector(".close-btn");
+const deleteBtn = document.querySelector(".delete-btn");
+const buyBtn = document.querySelector(".buy-btn");
 /* Carrito Desktop */
 const cartMenu = document.querySelector(".cart");
 const overlay = document.querySelector(".overlay");
@@ -28,7 +30,7 @@ const createProductTemplate = (product) => {
           <div>
             <div class="flex gap-2">
               <h5 class="text-base font-bold text-gray-800">${name}</h5>
-              <h6 class="text-base text-gray-800 font-bold ml-auto">$${precio}</h6>
+              <h6 class="text-base text-gray-800 font-bold ml-auto">$ ${precio}</h6>
             </div>
             <p class="text-gray-500 text-[13px] mt-2">${descripcion}</p>
             <div class="flex items-center gap-2 mt-4">
@@ -239,6 +241,32 @@ const handleQuantity = (e) => {
   updateCartState();
 };
 
+const resetCartItems = () => {
+  cart = [];
+  updateCartState();
+};
+
+const completeCartAction = (confirmMsg, successMsg) => {
+  if (!cart.length) return;
+  if (window.confirm(confirmMsg)) {
+    resetCartItems(alert(successMsg));
+  }
+};
+
+const deleteCart = () => {
+  completeCartAction(
+    "¿Deseas vaciar el carrito?",
+    "No hay productos en el carrito"
+  );
+};
+
+const completeBuy = () => {
+  completeCartAction(
+    "¿Queres terminar la compra?",
+    "Gracias por confiar en Unique Gamers"
+  );
+};
+
 const init = () => {
   renderProducts(appState.products[0]);
   showMoreBtn.addEventListener("click", showMoreProducts);
@@ -251,6 +279,8 @@ const init = () => {
   document.addEventListener("DOMContentLoaded", renderCart);
   document.addEventListener("DOMContentLoaded", showCartTotal);
   productsCart.addEventListener("click", handleQuantity);
+  deleteBtn.addEventListener("click", deleteCart);
+  buyBtn.addEventListener("click", completeBuy);
 };
 
 init();
