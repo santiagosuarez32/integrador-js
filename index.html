@@ -1,0 +1,308 @@
+<!doctype html>
+
+<html>
+  
+<head>
+  <title>Unique Gamers | Tu tienda Gamer</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./src/index.css" rel="stylesheet">
+  <link rel="icon" href="assets/img/descarga.png">
+</head>
+<body id="home"  class="bg-gray-900">
+  <!-- HEADER -->
+  <header class=" bg-gray-900">
+    <div class="mx-auto max-w-screen-xl px-4 md:px-4  sm:px-6 lg:px-8">
+      <div class="flex h-16 items-center justify-between">
+        <div class="md:flex md:items-center md:gap-12">
+          <a class="block  text-teal-600" href="#home">
+            <span class="sr-only">Home</span>
+            <img class="h-12" src="assets/img/descarga.png" alt="Logo">
+          </a>
+        </div>
+        <div class="hidden md:block ">
+          <nav aria-label="Global">
+            <ul class="flex items-center gap-6 text-sm">
+              <li>
+                <a
+                  class=" transition  text-white hover:text-white/75"
+                  href="#about-us-section"
+                >
+                  Nosotros
+                </a>
+              </li>
+              <li>
+                <a
+                  class=" transition  text-white hover:text-white/75"
+                  href="#products-section"
+                >
+                  Productos
+                </a>
+              </li>
+              <li>
+                <a
+                  class=" transition  text-white hover:text-white/75"
+                  href="#"
+                >
+                  Contáctanos
+                </a>
+              </li>
+              <li>
+                <a
+                  class=" transition  text-white hover:text-white/75"
+                  href="#footer"
+                >
+                  Footer
+                </a>
+              </li>
+              <li>
+                <a
+                  class=" transition  text-white hover:text-white/75"
+                  href="#"
+                >
+                
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="flex items-center gap-4">
+          <div class=" hidden sm:flex sm:gap-4">
+            <a
+              class="rounded-md  px-5 py-2.5 text-sm font-medium text-white shadow hover:bg-red-700 bg-red-600 "
+              href="#"
+            >
+              Iniciar Sesión
+            </a>
+            <div class="hidden sm:flex">
+              <a
+                class="rounded-md  px-5 py-2.5 text-sm font-medium  bg-gray-800 text-white hover:text-white/75"
+                href="#"
+              >
+                Registrarse
+              </a>
+              <a  class="rounded p-2 text-white hover:text-white/75 ml-8 md:ml-2 sm:hidden lg:block md:block cart-button">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l1.6-8H6.4L7 13zm-1 4a2 2 0 104 0m4 0a2 2 0 104 0m1 0a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+            </a>
+          </div>
+        </div>
+        <a   class="rounded p-2 text-white hover:text-white/75 ml-8 md:ml-2 md:hidden lg:hidden cart-button2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l1.6-8H6.4L7 13zm-1 4a2 2 0 104 0m4 0a2 2 0 104 0m1 0a3 3 0 11-6 0 3 3 0 016 0z" />
+          </svg>
+      </a>
+        <div class="md:hidden open-hamb" >
+          <button
+              class="rounded p-2  transition  bg-gray-800 text-white hover:text-white/75"  
+              >
+              <svg
+                class="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+                >
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+              
+            </button>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hidden md:hidden hamb-menu absolute top-16 left-0 w-full  text-white">
+    <div class="flex flex-col items-center justify-center space-y-4 p-6 bg-gray-900 text-white">
+        <a href="#about-us-section" class="transition hover:text-gray-400">Nosotros</a>
+        <a href="#products-section" class="transition hover:text-gray-400">Productos</a>
+        <a href="#contact-section" class="transition hover:text-gray-400">Contáctanos</a>
+        <a href="#footer" class="transition hover:text-gray-400">Footer</a>
+    </div>
+    <!-- <div class="overlay"></div> -->
+</div>
+  </header>
+   <!-- <div id="overlay" class="hidden overlay"></div>
+<div id="cart-menu" class="cart-menu"></div>  -->
+  <!-- SECTION CARD-HEADER -->
+  <section id="header"  class="bg-gray-900 flex items-center justify-center flex-col  md:mt-20 lg:mt-5">
+    <div class="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-30 lg:grid-cols-12 text-center">
+        <div class="mr-auto place-self-center lg:col-span-7 ">
+            <h1 class="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl text-red-500">Tu tienda Gaming</h1>
+            <p class="max-w-2xl mb-6 font-light  lg:mb-8 md:text-lg lg:text-xl text-white">
+              Los mejores precios y productos para que tengas una experiencia gaming única, con los productos de primera calidad, con la mejor garantía y seguridad en tu compra
+            </p>
+            <a class="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-primary-700">
+              
+                Descubre
+                <svg class="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                </svg>
+            </a>
+            <a href="#products-section" class="inline-flex items-center justify-center px-0.5 py-0.5 text-base font-medium text-center  rounded-lg   text-whit relative flex-col gap-5 border-0  border-transparent  overflow-hidden sm:rounded-b-sm z-10 ">
+              <div class="absolute inset-0 bg-animated-gradient-border rounded-2xl"></div>
+              <p class="relative z-10 flex flex-col gap-0.5 p-5 sm:p-4 bg-gray-900 rounded-2xl text-white ">
+                Ofertas Imperdibles
+              </p>
+            </a>
+        </div>
+        <div class=" lg:flex lg:col-span-5 lg:justify-end lg:items-center py-3 flex justify-center items-center">
+            <img src="assets/img/descarga.png" alt="mockup" class="max-w-auto h-auto">
+        </div>
+    </div>
+</section>
+<!-- SECTION ABOUT US -->
+<section id="about-us-section" class="flex items-center"  >
+  <div class="mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-20">
+    <h2 class="mb-8 text-3xl font-bold md:text-5xl lg:mb-14 text-white"> ¿Que es <span class="text-red-500">Unique Gamers</span>? </h2>
+    <p class="mb-8 max-w-lg text-sm text-white sm:text-base lg:mb-4"> En <span class="text-red-500">Unique Gamers</span>, nos dedicamos a llevar tu experiencia de juego al siguiente nivel. Somos una empresa especializada en la venta de hardware de alta calidad para PC y productos relacionados con el gaming. Nuestro compromiso es ofrecerte los mejores componentes y accesorios para que disfrutes de una experiencia gaming única, con el máximo rendimiento y la más avanzada tecnología. </p>
+    <div class="grid gap-10 lg:grid-cols-2 lg:gap-12 ">
+      <br>
+      
+      <div id="card-wrapper" class="relative flex flex-col gap-5 border-4  border-transparent p-0.5 overflow-hidden sm:rounded-b-sm">
+        <div class="absolute inset-0 bg-animated-gradient-border rounded-xl"></div>
+        <div class="relative z-10 flex flex-col gap-5 p-10 sm:p-20 bg-gray-900 rounded-xl">
+        <h2 class="text-3xl font-bold md:text-5xl text-white">Nuestra misión</h2>
+        <p class="text-sm text-white sm:text-base"> En Unique Gamers, nuestra misión es ofrecerte el mejor hardware para PC y productos gaming. Solo trabajamos con las marcas más confiables, incorporamos las últimas tendencias tecnológicas, brindamos un servicio al cliente excepcional con asesoramiento experto y fomentamos una comunidad apasionada por el gaming.
+          <br />
+          <br /> ¡Adentrate en el mundo gaming con la mejor asesoria!
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- SECTION PRODUCTS -->
+<section id="products" class="items-center justify-center flex-col min-h-screen hidden lg:flex md:flex"> 
+  <div id="productos" class="hidden lg:block md:block">
+    <div class="p-15 mx-auto lg:max-w-5xl md:max-w-4xl sm:max-w-xl max-sm:max-w-sm">
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-white mb-6 sm:mb-10 text-center">Componentes Hardware Gaming</h2>
+      <div class="flex items-center justify-center mb-15 gap-1.5 flex-col">
+        <div class="flex items-center justify-center mb-15 gap-1.5 flex-wrap">
+          <div class="group relative text-sm font-medium text-white  flex categories">
+            <button class="block border border-current   px-12 py-3 category" data-category="hardware">
+              Hardware
+            </button>
+            <button class="block border border-current b px-12 py-3 category active">
+              Todos
+            </button>
+            <button class="block border border-current px-12 py-3 category" data-category="perifericos">
+              Perifericos
+            </button>
+          </div>
+        </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 max-xl:gap-4 gap-6 products-container">
+  </div>
+  <div class="p-7 load-button">
+    <div class="p-2">
+      <button class="bg-red-500 hover:bg-red-700 text-white font-bold   py-2 px-4 rounded focus:outline-none focus:shadow-outline transition duration-300 ease-in-out">
+        Cargar Más
+      </button>
+    </div>
+    </div>
+</div>
+</div>
+</section>
+<!-- SECTION CONTACT -->
+<section id="section-contact">
+  <div class="mx-auto max-w-4xl px-5 py-16 text-center md:px-10 md:py-20">
+    <h2 class="text-3xl font-bold md:text-5xl text-red-500 ">Contacto</h2>
+    <p class="mx-auto mb-8 mt-4 max-w-lg text-white md:mb-12 lg:mb-16"> Ingresa tu información personal para ponerte en contacto con <span class="text-red-500">Unique Gamers</span> </p>
+    <form name="wf-form-name" method="get" class="mx-auto mb-4 text-left sm:px-4 md:px-20">
+      <div class="mb-4 grid w-full grid-cols-2 gap-6">
+        <div>
+          <label htmlFor="name-2" class="mb-1 font-medium text-white"> Nombre: </label>
+          <input type="text" class=" block h-9 w-full rounded-md border border-solid border-red-700 px-3 py-6 text-sm text-white" placeholder="Ingresa tu nombre" required="" />
+        </div>
+        <div>
+          <label htmlFor="name-3" class="mb-1 font-medium text-white"> Apellido: </label>
+          <input type="text" class=" block h-9 w-full rounded-md border border-solid border-red-700 px-3 py-6 text-sm text-white" placeholder="Ingresa tu apellido" required="" />
+        </div>
+      </div>
+      <div class="mb-4">
+        <label htmlFor="field" class="mb-1 font-medium text-white"> Número de telefono </label>
+        <input type="text" class="mb-4 block h-9 w-full rounded-md border border-solid border-red-700 px-3 py-6 text-sm text-white" placeholder="Ingresa tu número de telefono" />
+      </div>
+      <div class="mb-4">
+        <label htmlFor="field" class="mb-1 font-medium text-white"> Email </label>
+        <input type="email" class="mb-4 block h-9 w-full rounded-md border border-solid border-red-700 px-3 py-6 text-sm text-white" placeholder="Ingresa tu email"/>
+      </div>
+      <div class="mb-5 md:mb-6 lg:mb-8">
+        <label htmlFor="field" class="mb-1 font-medium text-white"> Mensaje </label>
+        <textarea placeholder="" maxLength="5000" name="field" class="mb-2.5 block h-auto min-h-44 w-full rounded-md border border-solid border-red-700 px-3 py-2 text-sm text-white"></textarea>
+      </div>
+      <label class="flex items-center cursor-pointer mb-1 justify-center pb-4 md:pl-5">
+      </label>
+      <input type="submit" value="¡Unete a Unique Gamers!" class="inline-block w-full rounded-md cursor-pointer bg-gray-600 px-6 py-3 text-center font-semibold text-white" />
+    </form>
+  </div>
+</section>
+<!-- FOOTER -->
+<footer id="footer" class="block">
+  <!-- Container -->
+  <div class="py-16 md:py-20 mx-auto w-full max-w-7xl px-5 md:px-10">
+    <!-- Component -->
+    <div class="flex-col flex items-center">
+      <a href="#" class="mb-8 inline-block max-w-full text-black">
+        <img src="/assets/img/descarga.png" alt="" class="inline-block max-h-50" />
+      </a>
+      <div class="text-center font-semibold">
+        <a href="#about-us-section" class="inline-block px-6 py-2 font-normal text-white transition hover:text-red-600"> Nosotros </a>
+        <a href="#products-section" class="inline-block px-6 py-2 font-normal text-white transition hover:text-red-600"> Productos </a>
+        <a href="#header" class="inline-block px-6 py-2 font-normal text-white transition hover:text-red-600"> Header </a>
+        <a href="#home" class="inline-block px-6 py-2 font-normal text-white transition hover:text-red-600"> Home </a>
+      </div>
+      <div class="mb-8 mt-8 border-b border-gray-300 w-48"></div>
+      <p class="text-sm sm:text-base text-white"> © Unique Gamers 2025 Landing Page </p>
+    </div>
+  </div>
+</footer>
+<div class="hidden relative z-100 cart" aria-labelledby="slide-over-title" role="dialog" aria-modal="true">
+  <div class="fixed inset-0 bg-gray-500/75 transition-opacity" aria-hidden="true"></div>
+  <div class="fixed inset-0 overflow-hidden">
+    <div class="absolute inset-0 overflow-hidden">
+      <div class="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10">
+        <div class="pointer-events-auto w-screen max-w-md">
+          <div class="flex h-full flex-col overflow-y-scroll bg-gray-500 shadow-xl">
+            <div class="flex-1 overflow-y-auto px-4 py-6 sm:px-6">
+              <div class="flex items-start justify-between">
+                <h2 class="text-lg font-medium text-white" id="slide-over-title">Carrito</h2>
+                <div class="ml-3 flex h-7 items-center">
+                  <button type="button" class="relative -m-2 p-2 z-20 text-black hover:text-gray-400 close-btn">
+                    <span class="absolute -inset-0.5"></span>
+                    <span class="sr-only">Close panel</span>
+                    <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12"></path>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div class="mt-8">
+                <div class="flow-root cart-container">
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="border-t border-gray-200 px-4 py-6 sm:px-6">
+              <div class="flex justify-between text-base font-medium text-white ">
+                <p>Total:</p>
+                <span class="total text-black "></span>
+              </div>
+              <div class="mt-6">
+                <a  class="flex items-center justify-center rounded-md border border-transparent bg-red-600 px-6 py-3 text-base font-medium text-white shadow-xs hover:bg-red-700">Comprar</a>
+              </div>
+              <div class="mt-6">
+                <a  class="flex items-center justify-center rounded-md border border-transparent bg-gray-700 px-6 py-3 text-base font-medium text-white shadow-xs hover:bg-gray-600">Vaciar Carrito</a>
+              </div>
+              <div class="mt-6 flex justify-center text-center text-sm text-gray-500"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script   src="assets/data.js"></script>
+<script     src="assets/index.js"></script>
+</body>
+</html>
