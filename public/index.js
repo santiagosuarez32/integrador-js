@@ -23,22 +23,22 @@ const saveCart = () => localStorage.setItem("cart", JSON.stringify(cart));
 
 const createProductTemplate = (product) => {
   const { id, name, precio, category, descripcion, cardImg } = product;
-  return `<div class="bg-white rounded-xl p-4 cursor-pointer hover:-translate-y-1 transition-all relative">    
-          <div class="mb-4 bg-gray-100 rounded p-2">
-          <img src="${cardImg}" alt="${name}" class="aspect-[33/35] w-full object-contain" />
-          </div>
-          <div>
-            <div class="flex gap-2">
-              <h5 class="text-base font-bold text-gray-800">${name}</h5>
-              <h6 class="text-base text-gray-800 font-bold ml-auto">$ ${precio}</h6>
-            </div>
-            <p class="text-gray-500 text-[13px] mt-2">${descripcion}</p>
-            <div class="flex items-center gap-2 mt-4">
-             
-            <button type="button" class="text-sm px-2 h-9 font-semibold w-full bg-red-600 hover:bg-red-700 text-white tracking-wide ml-auto outline-none border-none rounded btn-add" data-id="${id}" data-name="${name}" data-price="${precio}" data-img="${cardImg}" data-desc="${descripcion}" >Agregar</button>
-          </div>
-        </div>
-      </div>`;
+  return `<div class="product-card">
+  <div class="image-container">
+    <img src="${cardImg}" alt="${name}" class="product-image"/>
+  </div>
+  <div class="product-details">
+    <div class="product-header">
+      <h5 class="product-name">${name}</h5>
+      <h6 class="product-price">$ ${precio}</h6>
+    </div>
+    <p class="product-description">${descripcion}</p>
+    <div class="product-actions">
+      <button type="button" class="btn-add" data-id="${id}" data-name="${name}" data-price="${precio}" data-img="${cardImg}" data-desc="${descripcion}">Agregar</button>
+    </div>
+  </div>
+</div>
+`;
 };
 
 const renderProducts = (products) => {

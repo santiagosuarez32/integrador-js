@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+
 .category.active {
   background-color: #FF0000;
 }
@@ -45,3 +46,83 @@
       
     
 
+      .product-card {
+        background-color: white;
+        border-radius: 1rem;
+        padding: 1rem;
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out;
+        position: relative;
+      }
+      
+      .product-card:hover {
+        transform: translateY(-0.25rem);
+      }
+      
+      .image-container {
+        background-color: #f3f4f6;
+        border-radius: 0.5rem;
+        padding: 0.5rem;
+        margin-bottom: 1rem;
+      }
+      
+      .product-image {
+        aspect-ratio: 33 / 35;
+        width: 100%;
+        object-fit: contain;
+      }
+      
+      .product-details {
+        display: flex;
+        flex-direction: column;
+      }
+      
+      .product-header {
+        display: flex;
+        gap: 0.5rem;
+      }
+      
+      .product-name {
+        font-size: 1rem;
+        font-weight: bold;
+        color: #1f2937;
+      }
+      
+      .product-price {
+        font-size: 1rem;
+        font-weight: bold;
+        color: #1f2937;
+        margin-left: auto;
+      }
+      
+      .product-description {
+        color: #6b7280;
+        font-size: 0.8125rem;
+        margin-top: 0.5rem;
+      }
+      
+      .product-actions {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-top: 1rem;
+      }
+      
+      .btn-add {
+        font-size: 0.875rem;
+        padding: 0.25rem 0.5rem;
+        font-weight: bold;
+        width: 100%;
+        background-color: #dc2626;
+        color: white;
+        text-align: center;
+        border: none;
+        border-radius: 0.5rem;
+        outline: none;
+        transition: background-color 0.2s ease-in-out;
+      }
+      
+      .btn-add:hover {
+        background-color: #b91c1c;
+      }
+      

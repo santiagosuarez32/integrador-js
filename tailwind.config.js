@@ -1,4 +1,8 @@
 module.exports = {
+  scripts: {
+  "build": "postcss src/styles.css -o dist/styles.css"
+}
+
   theme: {
     plugins: [require("tailwind-hamburgers")],
     extend: {
