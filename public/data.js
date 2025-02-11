@@ -5,7 +5,7 @@ const productsData = [
     precio: 800,
     descripcion: "Auriculares para tener la mejor experiencia gamer",
     category: "perifericos",
-    cardImg: "public/products/auriculares.webp",
+    cardImg: "/products/auriculares.webp",
   },
   {
     id: 2,
@@ -13,7 +13,7 @@ const productsData = [
     precio: 760,
     descripcion: "Ideal para la refrigeración y mantenimiento del cpu",
     category: "hardware",
-    cardImg: "public/products/cooler.jpg",
+    cardImg: "/products/cooler.jpg",
   },
   {
     id: 3,
@@ -21,7 +21,7 @@ const productsData = [
     precio: 330,
     descripcion: "Ideal para tener la mayor comodidad en tu set-up",
     category: "perifericos",
-    cardImg: "public/products/pad.jpg",
+    cardImg: "/products/pad.jpg",
   },
   {
     id: 4,
@@ -29,7 +29,7 @@ const productsData = [
     precio: 560,
     descripcion: "Adquiere mayor velocidad de lectura en tu Pc",
     category: "hardware",
-    cardImg: "public/products/disco-hdd.webp",
+    cardImg: "/products/disco-hdd.webp",
   },
   {
     id: 5,
@@ -37,7 +37,7 @@ const productsData = [
     precio: 670,
     descripcion: "La mejor opción si deseas tener velocidad en tu Pc",
     category: "hardware",
-    cardImg: "public/products/disco-ssd.jpg",
+    cardImg: "/products/disco-ssd.jpg",
   },
   {
     id: 6,
@@ -45,7 +45,7 @@ const productsData = [
     precio: 780,
     descripcion: "Alimenta y optimiza tus componentes con esta fuente",
     category: "hardware",
-    cardImg: "public/products/fuente-de-poder.webp",
+    cardImg: "/products/fuente-de-poder.webp",
   },
   {
     id: 7,
@@ -53,7 +53,7 @@ const productsData = [
     precio: 653,
     descripcion: "Obtiene la mayor velocidad en tu Pc con esta opción",
     category: "hardware",
-    cardImg: "public/products/intel.webp",
+    cardImg: "/products/intel.webp",
   },
   {
     id: 8,
@@ -61,7 +61,7 @@ const productsData = [
     precio: 700,
     descripcion: "Ensambla y organiza tus componentes Gaming",
     category: "perifericos",
-    cardImg: "public/products/gabinete.jpg",
+    cardImg: "/products/gabinete.jpg",
   },
   {
     id: 9,
@@ -69,7 +69,7 @@ const productsData = [
     precio: 800,
     descripcion: "Disfruta de los mejores juegos con esta opción",
     category: "hardware",
-    cardImg: "public/products/tarjeta-de-video.jpg",
+    cardImg: "/products/tarjeta-de-video.jpg",
   },
   {
     id: 10,
@@ -77,7 +77,7 @@ const productsData = [
     precio: 670,
     descripcion: "Obtiene el mejor desempeño en tus juegos",
     category: "hardware",
-    cardImg: "public/products/memory.jpg",
+    cardImg: "/products/memory.jpg",
   },
   {
     id: 11,
@@ -85,7 +85,7 @@ const productsData = [
     precio: 700,
     descripcion: "Ideal para tener una mejor experiencia Gaming",
     category: "perifericos",
-    cardImg: "public/products/monitor.webp",
+    cardImg: "/products/monitor.webp",
   },
   {
     id: 12,
@@ -93,7 +93,7 @@ const productsData = [
     precio: 820,
     descripcion: "Mejora tu jugabilidad y competitividad",
     category: "perifericos",
-    cardImg: "public/products/mouse.jpeg",
+    cardImg: "/products/mouse.jpeg",
   },
   {
     id: 13,
@@ -101,7 +101,7 @@ const productsData = [
     precio: 125,
     descripcion: "Mayor compatibilidad con nuevos componentes",
     category: "hardware",
-    cardImg: "public/products/placa-madre.jpg",
+    cardImg: "/products/placa-madre.jpg",
   },
   {
     id: 14,
@@ -109,7 +109,7 @@ const productsData = [
     precio: 350,
     descripcion: "Ideal para refrigerar tus componentes",
     category: "perifericos",
-    cardImg: "public/products/camara.jpg",
+    cardImg: "/products/camara.jpg",
   },
   {
     id: 15,
@@ -117,7 +117,7 @@ const productsData = [
     precio: 170,
     descripcion: "Tarjeta de video potente y ideal para gaming",
     category: "perifericos",
-    cardImg: "public/products/microfono.jpg",
+    cardImg: "/products/microfono.jpg",
   },
 
   {
@@ -126,7 +126,7 @@ const productsData = [
     precio: 220,
     descripcion: "Mejor jugabilidad y diseño en tus juegos",
     category: "perifericos",
-    cardImg: "public/products/teclado-mecanico.webp",
+    cardImg: "/products/teclado-mecanico.webp",
   },
 ];
 
