@@ -150,20 +150,20 @@ const getCartTotal = () => {
 
 const createCartProductHTML = (cartProduct) => {
   const { id, name, price, img, quantity, desc } = cartProduct;
-  return `<div class="flex justify-center">
-  <div class="product-card bg-white rounded-lg shadow-md p-4 mb-4 transition transform hover:scale-105 max-w-lg flex justify-between">
-    <div class="flex items-center">
-      <img src="${img}" alt="Pad Gamer" class="w-16 h-16 rounded-md mr-4 border border-gray-200">
-      <div class="flex flex-col">
-        <h3 class="text-md font-bold text-gray-900 mb-2">${name}</h3>
-        <p class="text-sm text-gray-600 mb-2">${desc}</p>
-        <p class="text-md font-extrabold text-black mt-1">$${price}</p>
+  return `<div class="product-container2">
+  <div class="product-card2">
+    <div class="product-details2">
+      <img src="${img}" alt="Pad Gamer" class="product-image2">
+      <div class="product-info2">
+        <h3 class="product-name2">${name}</h3>
+        <p class="product-desc2">${desc}</p>
+        <p class="product-price2">$${price}</p>
       </div>
     </div>
-    <div class="flex items-center">
-      <button class="quantity-down bg-gray-300 text-gray-800 py-1 px-3 rounded-lg hover:bg-gray-400" data-id="${id}">-</button>
-      <span class="mx-2 text-lg font-semibold text-gray-800">${quantity}</span>
-      <button class="quantity-up bg-gray-300 text-gray-800 py-1 px-3 rounded-lg hover:bg-gray-400" data-id="${id}" >+</button>
+    <div class="product-quantity2">
+      <button class="quantity-down" data-id="${id}">-</button>
+      <span class="quantity-value">${quantity}</span>
+      <button class="quantity-up" data-id="${id}">+</button>
     </div>
   </div>
 </div>
