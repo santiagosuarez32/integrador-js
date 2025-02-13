@@ -7,12 +7,14 @@ const productsCart = document.querySelector(".cart-container");
 const closeBtn = document.querySelector(".close-btn");
 const deleteBtn = document.querySelector(".delete-btn");
 const buyBtn = document.querySelector(".buy-btn");
-const registerForm = document.getElementById("register-form");
 const nameInput = document.getElementById("input-name");
 const lastNameInput = document.getElementById("input-lastname");
 const emailInput = document.getElementById("input-email");
 const phoneInput = document.getElementById("input-phone");
 const msgInput = document.getElementById("input-msg");
+const contactForm = document.getElementById("contact-form");
+
+// const overlay = document.querySelector(".overlay");
 
 const MIN_CHARACTERS = 3;
 const MAX_CHARACTERS = 25;
@@ -27,25 +29,7 @@ const total = document.querySelector(".total");
 const successModal = document.querySelector(".add-modal");
 
 const isEmpty = (input) => {
-  console.log(!input.value.trim().length);
   return !input.value.trim().length;
-};
-
-checkTextInput = (input) => {
-  let valid = false;
-
-  if (isEmpty(input)) {
-    console.log("esta vacio");
-    return;
-  }
-
-  if (!isBetween(input, MIN_CHARACTERS, MAX_CHARACTERS)) {
-    console.log("el campo tiene que tener entre 3 y 25 caracteres");
-    return;
-  }
-
-  valid = true;
-  return valid;
 };
 
 const isBetween = (input, min, max) => {
@@ -53,10 +37,32 @@ const isBetween = (input, min, max) => {
 };
 
 const showError = (input, message) => {
-  console.log(input, message);
+  input.classList.add("border-red");
+  input.classList.remove("border-blue");
 };
 
-const showSuccess = () => {};
+const showSuccess = (input) => {
+  input.classList.add("border-blue");
+  input.classList.remove("border-red");
+};
+
+const checkTextInput = (input) => {
+  let valid = false;
+
+  if (isEmpty(input)) {
+    showError(input, "el campo no puede estar vacío");
+    return;
+  }
+
+  if (!isBetween(input, MIN_CHARACTERS, MAX_CHARACTERS)) {
+    showError(input, "el campo tiene que tener entre 3 y 25 caracteres");
+    return;
+  }
+
+  showSuccess(input);
+  valid = true;
+  return valid;
+};
 
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
@@ -152,12 +158,12 @@ const changeFilterState = (btn) => {
   showMoreBtn.classList.add("hidden");
 };
 
-const closeCart = () => {
-  cartMenu.classList.add("hidden");
-};
-
 const addCart = () => {
   cartMenu.classList.remove("hidden");
+};
+
+const closeCart = () => {
+  cartMenu.classList.add("hidden");
 };
 
 const addCartMobile = () => {
@@ -185,7 +191,6 @@ const getCartTotal = () => {
     (acc, cur) => acc + Number(cur.price) * cur.quantity,
     0
   );
-  console.log(total);
   return total;
 };
 
@@ -222,11 +227,9 @@ const addProduct = (e) => {
     cart = [...cart, { ...product, quantity: 1 }];
   }
   updateCartState();
-  console.log(cart);
 };
 
 const addUnitToProduct = (product) => {
-  // console.log("existe en el carro, le agrego uno mas");
   cart = cart.map((cartProduct) =>
     cartProduct.id === product.id
       ? { ...cartProduct, quantity: cartProduct.quantity + 1 }
@@ -241,7 +244,6 @@ const createProductData = (product) => {
 
 const handlePlusEvent = (id) => {
   const existingCartProduct = cart.find((item) => item.id === id);
-  console.log(existingCartProduct);
   addUnitToProduct(existingCartProduct);
 };
 
@@ -270,12 +272,9 @@ const substractProductUnit = (existingProduct) => {
 };
 
 const handleQuantity = (e) => {
-  // console.log(e.target);
   if (e.target.classList.contains("quantity-down")) {
-    console.log("resta");
     handleMinusBtnEvent(e.target.dataset.id);
   } else if (e.target.classList.contains("quantity-up")) {
-    // console.log("suma");
     handlePlusEvent(e.target.dataset.id);
   }
 
@@ -308,6 +307,30 @@ const completeBuy = () => {
   );
 };
 
+contactForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const isNameValid = checkTextInput(nameInput);
+  const isLastNameValid = checkTextInput(lastNameInput);
+  const isEmailValid = checkTextInput(emailInput);
+  const isPhoneValid = checkTextInput(phoneInput);
+  const isMsgValid = checkTextInput(msgInput);
+
+  if (
+    isNameValid &&
+    isLastNameValid &&
+    isEmailValid &&
+    isPhoneValid &&
+    isMsgValid
+  ) {
+    alert("Formulario enviado correctamente");
+    location.reload(); // Recarga la página
+    window.scrollTo(0, 0); // Vuelve al inicio de la página
+  } else {
+    alert("Por favor, completa todos los campos correctamente.");
+  }
+});
+
 const init = () => {
   renderProducts(appState.products[0]);
   showMoreBtn.addEventListener("click", showMoreProducts);
@@ -323,6 +346,10 @@ const init = () => {
   deleteBtn.addEventListener("click", deleteCart);
   buyBtn.addEventListener("click", completeBuy);
   nameInput.addEventListener("input", () => checkTextInput(nameInput));
+  lastNameInput.addEventListener("input", () => checkTextInput(lastNameInput));
+  emailInput.addEventListener("input", () => checkTextInput(emailInput));
+  phoneInput.addEventListener("input", () => checkTextInput(phoneInput));
+  msgInput.addEventListener("input", () => checkTextInput(msgInput));
 };
 
 init();

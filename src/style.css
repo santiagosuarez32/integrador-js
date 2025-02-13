@@ -86,3 +86,15 @@
     color: rgba(31, 41, 55, 1);
   }
   
+
+  
+ 
+  .form-input.border-red {
+    border-color: red;
+  }
+  
+  .form-input.border-blue {
+    border-color: blue;
+  }
+  
+  
