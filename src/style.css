@@ -97,4 +97,7 @@
     border-color: green;
   }
   
-  
+  .error-message {
+    display: none;
+    font-size: 0.875rem;
+  }

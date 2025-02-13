@@ -36,26 +36,44 @@ const isBetween = (input, min, max) => {
   return input.value.length >= min && input.value.length <= max;
 };
 
+const containsAtSymbol = (input) => {
+  return input.value.includes("@");
+};
+
+const isEmailValid = (input) => {
+  const regex = /^\w+([\.-]?\w+)*@(gmail|hotmail|yahoo)\.com$/;
+  return regex.test(input.value.trim());
+};
+
 const showError = (input, message) => {
+  const errorElement = input.nextElementSibling;
   input.classList.add("border-red");
   input.classList.remove("border-blue");
+  errorElement.textContent = message;
+  errorElement.style.display = "block";
 };
 
 const showSuccess = (input) => {
+  const errorElement = input.nextElementSibling;
   input.classList.add("border-blue");
   input.classList.remove("border-red");
+  errorElement.textContent = "";
+  errorElement.style.display = "none";
 };
 
 const checkTextInput = (input) => {
   let valid = false;
 
   if (isEmpty(input)) {
-    showError(input, "el campo no puede estar vacío");
+    showError(input, "Este campo no puede estar vacío");
     return;
   }
 
   if (!isBetween(input, MIN_CHARACTERS, MAX_CHARACTERS)) {
-    showError(input, "el campo tiene que tener entre 3 y 25 caracteres");
+    showError(
+      input,
+      `El campo tiene que tener entre ${MIN_CHARACTERS} y ${MAX_CHARACTERS} caracteres`
+    );
     return;
   }
 
@@ -63,6 +81,51 @@ const checkTextInput = (input) => {
   valid = true;
   return valid;
 };
+
+const checkEmailInput = (input) => {
+  let valid = false;
+
+  if (!containsAtSymbol(input)) {
+    showError(input, "El email debe contener un @");
+    return;
+  } else {
+    showSuccess(input);
+    valid = true;
+  }
+
+  if (!isEmailValid(input)) {
+    showError(
+      input,
+      "El email debe ser válido y terminar en @gmail.com, @hotmail.com o @yahoo.com"
+    );
+    valid = false;
+  }
+
+  return valid;
+};
+contactForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const isNameValid = checkTextInput(nameInput);
+  const isLastNameValid = checkTextInput(lastNameInput);
+  const isEmailValid = checkEmailInput(emailInput);
+  const isPhoneValid = checkTextInput(phoneInput);
+  const isMsgValid = checkTextInput(msgInput);
+
+  if (
+    isNameValid &&
+    isLastNameValid &&
+    isEmailValid &&
+    isPhoneValid &&
+    isMsgValid
+  ) {
+    alert("Formulario enviado correctamente");
+    location.reload(); // Recarga la página
+    window.scrollTo(0, 0); // Vuelve al inicio de la página
+  } else {
+    alert("Por favor, completa todos los campos correctamente.");
+  }
+});
 
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
@@ -307,30 +370,6 @@ const completeBuy = () => {
   );
 };
 
-contactForm.addEventListener("submit", (e) => {
-  e.preventDefault();
-
-  const isNameValid = checkTextInput(nameInput);
-  const isLastNameValid = checkTextInput(lastNameInput);
-  const isEmailValid = checkTextInput(emailInput);
-  const isPhoneValid = checkTextInput(phoneInput);
-  const isMsgValid = checkTextInput(msgInput);
-
-  if (
-    isNameValid &&
-    isLastNameValid &&
-    isEmailValid &&
-    isPhoneValid &&
-    isMsgValid
-  ) {
-    alert("Formulario enviado correctamente");
-    location.reload(); // Recarga la página
-    window.scrollTo(0, 0);
-  } else {
-    alert("Por favor, completa todos los campos correctamente.");
-  }
-});
-
 const init = () => {
   renderProducts(appState.products[0]);
   showMoreBtn.addEventListener("click", showMoreProducts);
@@ -347,7 +386,7 @@ const init = () => {
   buyBtn.addEventListener("click", completeBuy);
   nameInput.addEventListener("input", () => checkTextInput(nameInput));
   lastNameInput.addEventListener("input", () => checkTextInput(lastNameInput));
-  emailInput.addEventListener("input", () => checkTextInput(emailInput));
+  emailInput.addEventListener("input", () => checkEmailInput(emailInput));
   phoneInput.addEventListener("input", () => checkTextInput(phoneInput));
   msgInput.addEventListener("input", () => checkTextInput(msgInput));
 };
