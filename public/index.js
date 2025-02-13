@@ -14,13 +14,10 @@ const phoneInput = document.getElementById("input-phone");
 const msgInput = document.getElementById("input-msg");
 const contactForm = document.getElementById("contact-form");
 
-// const overlay = document.querySelector(".overlay");
-
 const MIN_CHARACTERS = 3;
 const MAX_CHARACTERS = 25;
-/* Carrito Desktop */
-const cartMenu = document.querySelector(".cart");
-const overlay = document.querySelector(".overlay");
+/* Carrito Desktop
+
 /* Menu burguer mobile */
 const menuBtn = document.querySelector(".cart-button2");
 const hambMenu = document.querySelector(".open-hamb");
@@ -324,8 +321,8 @@ contactForm.addEventListener("submit", (e) => {
     isMsgValid
   ) {
     alert("Formulario enviado correctamente");
-    location.reload(); // Recarga la página
-    window.scrollTo(0, 0); // Vuelve al inicio de la página
+    location.reload();
+    window.scrollTo(0, 0);
   } else {
     alert("Por favor, completa todos los campos correctamente.");
   }
