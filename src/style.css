@@ -102,3 +102,7 @@
     font-size: 0.875rem;
   }
 
+.cart {
+  z-index: 2000;
+  position: relative;
+}
