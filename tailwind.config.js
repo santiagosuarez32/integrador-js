@@ -6,6 +6,9 @@ module.exports = {
   theme: {
     plugins: [require("tailwind-hamburgers")],
     extend: {
+      colors: {
+        'custom-blue': '#1F2C4B',
+      },
       animation: {
         "gradient-border": "gradientBorderAnimation 8s ease infinite",
       },
